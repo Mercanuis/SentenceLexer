@@ -1,0 +1,18 @@
+#
+# A simple makefile for compiling
+#
+
+# define a makefile variable for the java compiler
+#
+JCC = javac
+
+# typing 'make'
+default: SentenceLexer.class 
+
+# this target entry builds the SentenceLexer class
+SentenceLexer.class: SentenceLexer.java
+        $(JCC) $(JFLAGS) SentenceLexer.java
+
+# To start over from scratch, type 'make clean'.  
+clean: 
+        $(RM) *.class
